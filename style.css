@@ -25,6 +25,10 @@ body {
     margin: auto;
 }
 
+li {
+    list-style: none;
+}
+
 header {
     width: 100%;
     background: var(--linear);
