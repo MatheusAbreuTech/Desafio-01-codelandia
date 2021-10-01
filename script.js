@@ -21,14 +21,21 @@ const notices = [
     },
 ]
 
+const addPosts = {
+    add(post) {
+        notices.push(post)
+        App.reload()
+    }
+}
+
 const DOM = {
+    listNotices: document.querySelector('#notices'),
     addNotice(notice) {
-        const ul = document.querySelector('#notices')
         const li = document.createElement('li')
 
         li.innerHTML = DOM.NoticeInnerHTML(notice)
 
-        ul.appendChild(li)
+        DOM.listNotices.appendChild(li)
     },
 
     NoticeInnerHTML(notice) {
@@ -56,3 +63,22 @@ notices.forEach((notice) => {
     DOM.addNotice(notice)
 })
 
+// const App = {
+//     init() {
+//         notices.forEach((notice) => {
+//             DOM.addNotice(notice)
+//         })
+//     },
+//     reload() {
+//         DOM.listNotices.innerHTML = ""
+//         App.init()
+//     }
+// }
+
+// App.init()
+
+// addPosts.add({
+//     date: '01 de out, 2021',
+//     title: 'Teste',
+//     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omni possimus veniam similique asperiores expedita totam excepturi nihil, perspiciatis ex velit rem numquam dolor dignissimos eius modi soluta iure ducimus ea.'
+// })
