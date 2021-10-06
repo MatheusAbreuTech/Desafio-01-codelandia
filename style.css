@@ -116,6 +116,10 @@ header .title-header h1 {
     margin-bottom: 1.3rem;
 }
 
+.box-notice .header-news i {
+    color: #574ae8;
+}
+
 .box-notice .header-news .news-date {
     font-family: "Lexend Deca", sans-serif;
     font-style: normal;

@@ -21,13 +21,6 @@ const notices = [
     },
 ]
 
-const addPosts = {
-    add(post) {
-        notices.push(post)
-        App.reload()
-    }
-}
-
 const DOM = {
     listNotices: document.querySelector('#notices'),
     addNotice(notice) {
@@ -43,11 +36,7 @@ const DOM = {
         <div class="box-notice">
             <div class="header-news">
                 <p class="news-date">${notice.date}</p>
-                <img
-                    class="icon-favorite"
-                    src="./assets/icon-favorite.svg"
-                    alt=""
-                />
+                <i class="far fa-heart"></i>
             </div>
             <h3 class="news-title">${notice.title}</h3>
             <p class="news-content">
@@ -63,22 +52,15 @@ notices.forEach((notice) => {
     DOM.addNotice(notice)
 })
 
-// const App = {
-//     init() {
-//         notices.forEach((notice) => {
-//             DOM.addNotice(notice)
-//         })
-//     },
-//     reload() {
-//         DOM.listNotices.innerHTML = ""
-//         App.init()
-//     }
-// }
+const animate = () => {
+    const sr = ScrollReveal({
+        origin: 'left',
+        distance: '100px',
+        duration: 2000,
+        reset: true
+    });
 
-// App.init()
+    ScrollReveal().reveal('.box-notice', { delay: 200 });
+}
 
-// addPosts.add({
-//     date: '01 de out, 2021',
-//     title: 'Teste',
-//     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omni possimus veniam similique asperiores expedita totam excepturi nihil, perspiciatis ex velit rem numquam dolor dignissimos eius modi soluta iure ducimus ea.'
-// })
+animate()
