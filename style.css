@@ -118,6 +118,7 @@ header .title-header h1 {
 
 .box-notice .header-news i {
     color: #574ae8;
+    cursor: pointer;
 }
 
 .box-notice .header-news .news-date {
